@@ -271,3 +271,70 @@ def palindrome(word):
     word_ = no_nonWord(word_)
     return word_ == word_[::-1]
 print(palindrome("다시 합창합시다 !!!!!!!!"))
+
+#바뀐 예제 추가
+
+lyrics = "\t When you're smiling, the whole world smiles with you.\n\t "
+
+print(lyrics.strip("\t\n ").startswith("W"))
+
+print(lyrics.strip().endswith("you.")) #기본적으로 strip() 에 아무것도 안적어도 화이트스페이스들은 제거해줌
+
+print(lyrics.lower().replace("you're","you are"))
+
+#예제 2
+abcd_colons = "a:b:c:d"
+
+print("#".join(abcd_colons.split(":")))
+
+#예제 3
+counting = 'one_Two_Three'
+
+print("".join(counting.split("_")))
+
+#예제 4 
+print(sorted('python') == sorted('ypthon'))
+
+#예제 5
+word = '여보게 저기 저게 보여'
+
+word = word.split()
+word = "".join(word)
+print(word[0:]== word[::-1])
+
+#예제 6
+# ord() 와 chr() 함수의 기능
+
+#ord() 함수는 문자열에 사용될 수 있는 각각의 유니코드 기호에 정수를 부여한다. 예를 들어 숫자 0에서 9까지의 정수 숫자 문자열은 
+#48부터 57까지의 정수가 부여된다.
+print(ord('0'), ord('9'))
+
+#영어 소문자 알파벳 a부터 z까지 26개에 대해서는
+#97부터 122가 부여되었다.
+
+print(ord('a'), ord('z'))
+
+#반면에 영어 대문자는 65부터 90이 부여
+print(ord('A'), ord('Z'))
+
+#chr()함수
+#chr()함수는 ord() 함수의 역함수에 해당
+del chr
+print(chr(48),chr(57))
+print(chr(97),chr(122))
+print(chr(65), chr(90))
+
+alphabet = 'c'
+#'z' 만드는 방법
+
+print(chr(ord('m')+13))
+
+alphabet = chr(ord(alphabet)+ 13)
+print(alphabet)
+
+alphabet = 'x'
+alphabet = chr(ord(alphabet)-13)
+print(alphabet)
+
+print(chr(ord('n') + 13)) #범위 넘어감, 예를 들어 n에 대항하는 기호가 여는 중괄호로 지정된다.
+print(chr(ord('n')-13)) #a
